@@ -1989,6 +1989,178 @@ html{scroll-padding-top:132px;}
   .study-android-role{padding:.9rem;}
 }
 
+
+/* v22 mobile polish: header logo fit + responsive aggregation flow */
+html,
+body.study-pro-page{
+  max-width:100%;
+  overflow-x:hidden;
+}
+.study-pro-page *,
+.study-pro-page *::before,
+.study-pro-page *::after{
+  box-sizing:border-box;
+}
+.study-pro-page .case-brand .brand-mark,
+.study-pro-page .study-footer-logo,
+.study-pro-page .logo-mark{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:linear-gradient(145deg, rgba(7,14,29,.92), rgba(15,23,42,.70));
+}
+.study-pro-page .case-brand .brand-mark img,
+.study-pro-page .study-footer-logo img,
+.study-pro-page .logo-mark img{
+  display:block;
+  width:74%;
+  height:74%;
+  max-width:74%;
+  max-height:74%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:8px;
+}
+.study-pro-page .case-brand{
+  min-width:0;
+}
+.study-pro-page .case-brand .brand-copy{
+  min-width:0;
+}
+.study-api-flow-card,
+.study-api-flow-card *,
+.study-api-flow-copy,
+.study-api-flow-steps,
+.study-api-flow-steps div,
+.study-api-endpoint-example{
+  min-width:0;
+  max-width:100%;
+}
+.study-api-flow-copy h3,
+.study-api-flow-copy p,
+.study-api-flow-steps strong,
+.study-api-flow-steps span,
+.study-api-endpoint-example code{
+  max-width:100%;
+  overflow-wrap:break-word;
+  word-break:normal;
+}
+@media(max-width:760px){
+  .study-pro-page .case-header{
+    width:calc(100% - 28px);
+    top:10px;
+    border-radius:22px;
+  }
+  .study-pro-page .case-nav{
+    min-height:58px;
+    padding:.52rem .60rem;
+    gap:.55rem;
+  }
+  .study-pro-page .case-brand{
+    max-width:calc(100% - 58px);
+    padding:.18rem .28rem .18rem .18rem;
+    gap:.58rem;
+  }
+  .study-pro-page .case-brand .brand-mark{
+    width:40px;
+    height:40px;
+    border-radius:14px;
+  }
+  .study-pro-page .case-brand .brand-copy strong{
+    font-size:.92rem;
+    max-width:190px;
+  }
+  .study-pro-page .case-nav-toggle{
+    width:44px;
+    height:42px;
+    flex:0 0 auto;
+    border-radius:16px;
+  }
+  .study-api-flow-card{
+    width:100%;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:.9rem;
+    padding:1rem;
+    border-radius:24px;
+    overflow:hidden;
+  }
+  .study-api-flow-copy span{
+    font-size:.68rem;
+    letter-spacing:.13em;
+    margin-bottom:.62rem;
+  }
+  .study-api-flow-copy h3{
+    font-size:clamp(1.35rem,7vw,1.78rem);
+    line-height:1.12;
+    letter-spacing:-.052em;
+    margin-bottom:.62rem;
+  }
+  .study-api-flow-copy p{
+    font-size:.96rem;
+    line-height:1.62;
+  }
+  .study-api-flow-steps{
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:.68rem;
+  }
+  .study-api-flow-steps div{
+    padding:.86rem;
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .study-api-flow-steps b{
+    width:28px;
+    height:28px;
+    border-radius:11px;
+    margin-bottom:.5rem;
+  }
+  .study-api-flow-steps strong{
+    font-size:.95rem;
+    line-height:1.25;
+  }
+  .study-api-flow-steps span{
+    font-size:.86rem;
+    line-height:1.45;
+  }
+  .study-api-endpoint-example{
+    padding:.72rem;
+    border-radius:17px;
+    overflow:hidden;
+  }
+  .study-api-endpoint-example code{
+    white-space:normal;
+    overflow:visible;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    font-size:.78rem;
+    line-height:1.45;
+  }
+}
+@media(max-width:430px){
+  .study-pro-page .case-header{
+    width:calc(100% - 24px);
+    border-radius:20px;
+  }
+  .study-pro-page .case-nav{
+    min-height:56px;
+    padding:.48rem .54rem;
+  }
+  .study-pro-page .case-brand .brand-mark{
+    width:38px;
+    height:38px;
+    border-radius:13px;
+  }
+  .study-pro-page .case-brand .brand-copy strong{
+    font-size:.88rem;
+    max-width:170px;
+  }
+  .study-api-flow-card{
+    padding:.9rem;
+    border-radius:22px;
+  }
+}
+
 </style>
 </head>
 <body class="study-pro-page" data-mode="all">
@@ -2254,14 +2426,14 @@ html{scroll-padding-top:132px;}
       <article class="study-api-flow-card" aria-label="API to dashboard aggregation flow">
         <div class="study-api-flow-copy">
           <span>Aggregation flow</span>
-          <h3>From domain APIs to operational dashboard signals</h3>
-          <p>Dashboard statistics are not a standalone feature. They are aggregated from multiple backend domains, operational workflows, repositories, and reporting queries, then exposed to the Next.js admin UI as a unified command view.</p>
+          <h3>From domain APIs to dashboard signals</h3>
+          <p>Dashboard statistics are aggregated from multiple backend domains, operational workflows, repositories, and reporting queries, then delivered to the Next.js admin UI as one operational command view.</p>
         </div>
         <div class="study-api-flow-steps">
-          <div><b>01</b><strong>Domain workflows</strong><span>Users, devices, manufacturing, store, RMA, NTRIP, releases, and events</span></div>
-          <div><b>02</b><strong>Application layer</strong><span>Services, MediatR flows, DTO mapping, validation, and authorization rules</span></div>
-          <div><b>03</b><strong>Data access</strong><span>SQL Server queries, Dapper repositories, migrations, and reporting views</span></div>
-          <div><b>04</b><strong>Admin integration</strong><span>Dashboard KPIs, Action Center, charts, freshness signals, and system-health panels</span></div>
+          <div><b>01</b><strong>Domain workflows</strong><span>Users, devices, manufacturing, store, RMA, NTRIP, releases, events</span></div>
+          <div><b>02</b><strong>Application layer</strong><span>MediatR flows, services, DTO mapping, validation, authorization</span></div>
+          <div><b>03</b><strong>Data access</strong><span>SQL Server queries, Dapper repositories, migrations, reporting reads</span></div>
+          <div><b>04</b><strong>Admin integration</strong><span>KPIs, Action Center, charts, freshness, system-health panels</span></div>
         </div>
         <div class="study-api-endpoint-example"><span>Example aggregation endpoint</span><code>GET /api/stats/dashboard?rangeDays=30&amp;bucket=day</code></div>
       </article>
