@@ -1903,3 +1903,7 @@ body:not([data-mode]) .resume-role-card{
 .study-footer-logo{width:46px;height:46px;border-radius:16px;overflow:hidden;padding:3px}
 .study-footer-logo img{width:100%;height:100%;object-fit:cover;border-radius:12px}
 @media(max-width:760px){.study-pro-page .site-footer{padding-top:58px;padding-bottom:34px}}
+
+/* Graduate study and completed undergraduate degree */
+.graduate-card{--credential-accent:var(--violet)}
+.development-card{grid-column:1/-1}
